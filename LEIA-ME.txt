@@ -1,0 +1,30 @@
+Jogo de sinuca desenvolvido por Eduardo Cruz e Guilherme Puglia
+para a disciplina de algoritmos e estrutura de dados I
+
+Linguagem: c++
+Programado no Dev C++ 4.9.9.2
+Utiliza biblioteca padrão do Windows e a ANSI C
+
+main.cpp
+Contém as funções que criam e gerenciam a janela. O sistema operacional inicia o programa pela função WinMain. O programa é avisado dos eventos pela função WndProc.
+
+snuke.cpp
+Classe principal do jogo, que integra todos os diferentes objetos
+
+backbuffer.cpp
+Classe que gerencia a saída da imagem para o monitor. Ela é resonsável por ir salvando e montando cada quadro. Sem ela aconteceria um problema chamado flickering, isto é, a tela ficaria piscando.
+
+ball.cpp
+Classe da bola. Contém métodos que fazem a bola se mover, detecta colisões, etc.
+
+ball_list.cpp
+Gerencia a lista de bolas através de uma lista circular.
+
+snuke_ia.cpp
+É a inteligência artificial do bot Zeh Muamba. Vai de bola em bola calculando a posição de batida para cada buraco. Seleciona a bola em que o ângulo de batida é o menor e que não haja nenhuma outra bola entre o bolão e a bola a ser encaçapada.
+
+vector.cpp
+Programação dos vetores.
+
+highscore.cpp
+Tabela das maiores pontuações. Usa um arquivo para salvar os dados.

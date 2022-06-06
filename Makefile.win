@@ -1,0 +1,54 @@
+# Project: snuke
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = snuke_private.res
+OBJ  = main.o ball_list.o ball.o vector.o snuke.o backbuffer.o snuke_ia.o highscore.o $(RES)
+LINKOBJ  = main.o ball_list.o ball.o vector.o snuke.o backbuffer.o snuke_ia.o highscore.o $(RES)
+LIBS =  -L"lib" -mwindows -lm  
+INCS =  -I"include"  -I"C:/Dev-Cpp/include/gtk-2.0"  -I"C:/Dev-Cpp/include/atk-1.0"  -I"C:/Dev-Cpp/include/glib-2.0"  -I"C:/Dev-Cpp/include/libglade-2.0"  -I"C:/Dev-Cpp/include/pango-1.0"  -I"C:/Dev-Cpp/include/cairo"  -I"C:/Dev-Cpp/include/libxml"  -I"C:/Dev-Cpp/lib/glib-2.0/include"  -I"C:/Dev-Cpp/lib/gtk-2.0/include" 
+CXXINCS =  -I"lib/gcc/mingw32/3.4.2/include"  -I"include/c++/3.4.2/backward"  -I"include/c++/3.4.2/mingw32"  -I"include/c++/3.4.2"  -I"include"  -I"C:/Dev-Cpp/include/gtk-2.0" 
+BIN  = snuke.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before snuke.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "snuke.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+ball_list.o: ball_list.cpp
+	$(CPP) -c ball_list.cpp -o ball_list.o $(CXXFLAGS)
+
+ball.o: ball.cpp
+	$(CPP) -c ball.cpp -o ball.o $(CXXFLAGS)
+
+vector.o: vector.cpp
+	$(CPP) -c vector.cpp -o vector.o $(CXXFLAGS)
+
+snuke.o: snuke.cpp
+	$(CPP) -c snuke.cpp -o snuke.o $(CXXFLAGS)
+
+backbuffer.o: backbuffer.cpp
+	$(CPP) -c backbuffer.cpp -o backbuffer.o $(CXXFLAGS)
+
+snuke_ia.o: snuke_ia.cpp
+	$(CPP) -c snuke_ia.cpp -o snuke_ia.o $(CXXFLAGS)
+
+highscore.o: highscore.cpp
+	$(CPP) -c highscore.cpp -o highscore.o $(CXXFLAGS)
+
+snuke_private.res: snuke_private.rc resources.rc 
+	$(WINDRES) -i snuke_private.rc --input-format=rc -o snuke_private.res -O coff 

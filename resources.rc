@@ -1,0 +1,55 @@
+#include <windows.h>
+#include "resources.h"
+
+TABLEBMP BITMAP "images/table.bmp"
+INTROBMP BITMAP "images/intro.bmp"
+BIGBALLBMP BITMAP "images/bigball.bmp"
+NOBIGBALLBMP BITMAP "images/nobigball.bmp"
+BIGBALLMASKBMP BITMAP "images/bigballmask.bmp"
+BALL1_BMP BITMAP "images/ball1.bmp"
+BALL1_MASKBMP BITMAP "images/ball1mask.bmp"
+
+BALL2_BMP BITMAP "images/ball2.bmp"
+BALL3_BMP BITMAP "images/ball3.bmp"
+BALL4_BMP BITMAP "images/ball4.bmp"
+BALL5_BMP BITMAP "images/ball5.bmp"
+BALL6_BMP BITMAP "images/ball6.bmp"
+BALL7_BMP BITMAP "images/ball7.bmp"
+BALL8_BMP BITMAP "images/ball8.bmp"
+BALL9_BMP BITMAP "images/ball9.bmp"
+BALL10_BMP BITMAP "images/ball10.bmp"
+
+MAINMENU MENU 
+{
+ POPUP "&Jogo"
+ {
+  MENUITEM "&Novo", CM_NEWGAME
+  MENUITEM SEPARATOR
+  MENUITEM "Sair", CM_EXIT
+ }
+
+ POPUP "&Ajuda"
+ {
+  MENUITEM "&Sobre", CM_ABOUT
+ }
+}
+
+IDD_ABOUTBOX DIALOG 20, 20, 208, 86
+STYLE WS_POPUP | DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "Sobre ZÉ MUAMBA SNOOKER game:"
+FONT 8, "Tahoma"
+BEGIN
+   DEFPUSHBUTTON "OK", IDOK, 151, 7, 50, 14 , WS_TABSTOP | BS_DEFPUSHBUTTON
+   LTEXT "Jogo criado por Eduardo H. M. da Cruz e Guilherme Puglia, acadêmicos do curso de Ciência da Computação da Universidade Estadual de Maringá.\n\n.:: neocode@perfectsoftware.org\n.:: rokr_uem@hotmail.com\n\nBy .neocode.", Text1, 5, 5, 139, 79 , WS_TABSTOP
+END
+
+IDD_SCOREBOX DIALOG 20, 20, 208, 43
+STYLE WS_POPUP | DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "High-score"
+FONT 8, "Tahoma"
+BEGIN
+   DEFPUSHBUTTON "OK", IDOK, 151, 7, 50, 14 , WS_TABSTOP | BS_DEFPUSHBUTTON
+   PUSHBUTTON "Cancel", IDCANCEL, 151, 24, 50, 14 , WS_TABSTOP
+   EDITTEXT Edit1, 43, 15, 80, 13 , WS_TABSTOP
+   LTEXT "Nome:", Text2, 5, 15, 32, 12 , WS_TABSTOP
+END
